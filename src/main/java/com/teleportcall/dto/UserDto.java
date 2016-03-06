@@ -2,7 +2,7 @@ package com.teleportcall.dto;
 
 import lombok.Data;
 
-public @Data class UserDto {
+public @Data class UserDto extends AbstractDto {
 
 	private String userId;
 	
