@@ -17,5 +17,7 @@ public @Data class UserDto {
 	private Boolean isActivated;
 	
 	private String profileImageUrl;
+	
+	public String gcmKey;
 
 }

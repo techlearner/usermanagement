@@ -22,6 +22,8 @@ public class User extends AbstractEntity {
 	
 	private String profileImageUrl;
 	
+	private String gcmKey;
+	
 	@Column(name="email", unique=true)
 	public String getEmail() {
 		return email;
@@ -83,6 +85,15 @@ public class User extends AbstractEntity {
 
 	public void setProfileImageUrl(String profileImageUrl) {
 		this.profileImageUrl = profileImageUrl;
+	}
+
+	@Column(name="gcm_key")
+	public String getGcmKey() {
+		return gcmKey;
+	}
+
+	public void setGcmKey(String gcmKey) {
+		this.gcmKey = gcmKey;
 	}
 	
 	
