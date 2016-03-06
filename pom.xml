@@ -15,7 +15,7 @@
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
 		<version>1.3.3.RELEASE</version>
-		<relativePath/> <!-- lookup parent from repository -->
+		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
 
 	<properties>
@@ -32,7 +32,7 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
-		
+
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
@@ -44,17 +44,17 @@
 			<version>0.9.1.2</version>
 		</dependency>
 		<dependency>
-            <groupId>mysql</groupId>
-            <artifactId>mysql-connector-java</artifactId>
-        </dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+		</dependency>
 		<dependency>
 			<groupId>com.googlecode.json-simple</groupId>
 			<artifactId>json-simple</artifactId>
 		</dependency>
 		<dependency>
-		 <groupId>org.projectlombok</groupId>
-		  <artifactId>lombok</artifactId>
-		  <version>1.16.6</version> 
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<version>1.16.6</version>
 		</dependency>
 		<dependency>
             <groupId>net.sf.dozer</groupId>
@@ -70,9 +70,13 @@
 	<artifactId>commons-io</artifactId>
 	<version>1.3.2</version>
 </dependency>
-		
+		<dependency>
+			<groupId>bsf</groupId>
+			<artifactId>bsf</artifactId>
+			<version>2.4.0</version>
+		</dependency>
 	</dependencies>
-	
+
 	<build>
 		<plugins>
 			<plugin>
@@ -81,6 +85,6 @@
 			</plugin>
 		</plugins>
 	</build>
-	
+
 
 </project>
