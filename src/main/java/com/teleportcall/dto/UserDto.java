@@ -1,13 +1,11 @@
 package com.teleportcall.dto;
 
-import java.util.List;
-
-import com.teleportcall.model.UserContact;
-
 import lombok.Data;
 
 public @Data class UserDto {
 
+	private String userId;
+	
 	private String email;
 
 	private String mobileNo;
@@ -15,6 +13,9 @@ public @Data class UserDto {
 	private String userName;
 
 	private String password;
+	
+	private Boolean isActivated;
+	
+	private String profileImageUrl;
 
-	private List<UserContactDto> userContact;
 }

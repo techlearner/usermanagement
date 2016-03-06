@@ -1,17 +1,14 @@
 package com.teleportcall.model;
 
-import java.util.List;
-
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
-import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
 @Table(name="user")
 public class User extends AbstractEntity {
+	
+	private String userId;
 
 	private String email;
 	
@@ -21,7 +18,9 @@ public class User extends AbstractEntity {
 	
 	private String password;
 	
-	private List<UserContact> userContact;
+	private Boolean isActivated;
+	
+	private String profileImageUrl;
 	
 	@Column(name="email", unique=true)
 	public String getEmail() {
@@ -59,13 +58,31 @@ public class User extends AbstractEntity {
 		this.password = password;
 	}
 
-	@OneToMany(mappedBy="user", fetch=FetchType.EAGER, cascade=CascadeType.ALL)
-	public List<UserContact> getUserContact() {
-		return userContact;
+	@Column(name="user_id", unique=true)
+	public String getUserId() {
+		return userId;
 	}
 
-	public void setUserContact(List<UserContact> userContact) {
-		this.userContact = userContact;
+	public void setUserId(String userId) {
+		this.userId = userId;
+	}
+
+	@Column(name="is_activated")
+	public Boolean getIsActivated() {
+		return isActivated;
+	}
+
+	public void setIsActivated(Boolean isActivated) {
+		this.isActivated = isActivated;
+	}
+
+	@Column(name="profile_image_url")
+	public String getProfileImageUrl() {
+		return profileImageUrl;
+	}
+
+	public void setProfileImageUrl(String profileImageUrl) {
+		this.profileImageUrl = profileImageUrl;
 	}
 	
 	

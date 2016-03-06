@@ -9,42 +9,92 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.MappedSuperclass;
 import javax.persistence.Transient;
+import javax.persistence.Version;
 
 import com.teleportcall.util.PersistenceListener;
-
-import lombok.Data;
 
 /**
  * Created by ssenthilkumar on 04/03/2016.
  */
 @MappedSuperclass
 @EntityListeners(value = {PersistenceListener.class})
-public @Data class AbstractEntity implements IEntity {
+public class AbstractEntity implements IEntity {
 
     private static final long serialVersionUID = 7665388940974264209L;
+
+    private Long pkey;
+    private Boolean deleted;
+    private String creator;
+    private Timestamp created;
+    private String changer;
+    private Timestamp changed;
+    private Long version;
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "pkey")
-    private Long pkey;
-    
+    public Long getPkey() {
+        return pkey;
+    }
+
+    public void setPkey(Long pkey) {
+        this.pkey = pkey;
+    }
+
     @Column(name = "deleted")
-    private Boolean deleted;
-    
+    public Boolean getDeleted() {
+        return deleted;
+    }
+
+    public void setDeleted(Boolean deleted) {
+        this.deleted = deleted;
+    }
+
     @Column(name = "creator")
-    private String creator;
-    
+    public String getCreator() {
+        return creator;
+    }
+
+    public void setCreator(String creator) {
+        this.creator = creator;
+    }
+
     @Column(name = "created")
-    private Timestamp created;
-    
+    public Timestamp getCreated() {
+        return created;
+    }
+
+    public void setCreated(Timestamp created) {
+        this.created = created;
+    }
+
     @Column(name = "changer")
-    private String changer;
-    
+    public String getChanger() {
+        return changer;
+    }
+
+    public void setChanger(String changer) {
+        this.changer = changer;
+    }
+
     @Column(name = "changed")
-    private Timestamp changed;
-    
+    public Timestamp getChanged() {
+        return changed;
+    }
+
+    public void setChanged(Timestamp changed) {
+        this.changed = changed;
+    }
+
     @Column(name = "version")
-    private Long version;
+    @Version
+    public Long getVersion() {
+        return version;
+    }
+
+    public void setVersion(Long version) {
+        this.version = version;
+    }
 
     @Override
     public boolean equals(Object o) {
@@ -58,5 +108,10 @@ public @Data class AbstractEntity implements IEntity {
     public Long getId() {
         return pkey;
     }
+
+    public void setId(Long id) {
+
+    }
+
 
 }
